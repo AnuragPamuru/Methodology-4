@@ -4,7 +4,7 @@ FROM $BASE_CONTAINER
 
 USER root
 
-RUN	apt-get install aria2
+RUN	apt-get install -y aria2
 RUN	apt-get install nmap
 RUN	apt-get install traceroute
 
