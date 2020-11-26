@@ -4,13 +4,7 @@ FROM $BASE_CONTAINER
 
 USER root
 
-RUN	apt-get install -y aria2
-RUN	apt-get install -y nmap
-RUN	apt-get install -y traceroute
-
-RUN conda install --yes geopandas
-
-RUN pip install --no-cache-dir babypandas
+RUN conda install pytorch torchvision torchaudio cudatoolkit=10.2 --yes -c pytorch
 
 COPY /run_jupyter.sh /
 RUN chmod 755 /run_jupyter.sh
